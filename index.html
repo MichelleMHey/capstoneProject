@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>  
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/external.js"></script> 
+
+  </head>
+
+  <body>
+
+    <!--nav bar starts-->
+    <div class="container">
+      <div class="navbar">
+  	    <div class="navbar-inner">
+    	  <a class="brand" href="#">StudentBlab.com</a>
+    	  <ul class="nav">
+      	    <li><a href="#">Home</a></li>
+      		<li><a href="#">Schools</a></li>
+      		<li><a href="#">Contact</a></li>
+    	  </ul>
+  		</div>
+	  </div>
+    </div>
+    <!--nav bar ends-->
+
+    <div class="container">
+      <form id="commentBoxForm" class="form-horizontal">
+        
+        <div class="control-group">
+          <label class="control-label" for="userName">User Name: </label>
+          <div class="controls">
+            <input id="userName" type="text" name="userName" placeholder="Leave blank to remain anonymous..." maxlength="25" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="userTags">Enter Tags: </label>
+          <div class="controls">
+            <input id="userTags" type="text" name="userTags" placeholder="Tag your post..." maxlength="25" />
+          </div>
+        </div>
+
+          <div class="control-group">
+          <label class="control-label" for="userComment">Post Your Comment: </label>
+          <div class="controls">
+            <input id="userComment" type="textfield" name="userComment" placeholder="What do you have to complain about..." maxlength="250" />
+          </div>
+        </div>
+
+      </form>
+      <button id="postComment" onclick="myPost();" class="btn btn-primary" type="button" form="commentBoxForm">Submit</button>
+    </div>
+
+    <div class="container">
+      <div id="displayUserComment"></div>
+    </div>
+
+  </body>
+
+</html>
