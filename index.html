@@ -7,92 +7,93 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/datepicker.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>  
     <script src="js/jquery.validate.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="js/external.js"></script>    
 
   </head>
 
   <body>
 
-    <!--nav bar starts-->
-    <div class="container">
-      <div class="navbar">
-  	    <div class="navbar-inner">
-    	  <a class="brand" href="#">StudentBlab.com</a>
-    	  <ul class="nav">
-      	  <li><a href="#">Home</a></li>
-      		<li><a href="#">Schools</a></li>
-      		<li><a href="#">Contact</a></li>
-          <li><a href="demoCommentPage.html">demo page</a></li>
-    	  </ul>
-  		</div>
-	  </div>
-    </div>
-    <!--nav bar ends-->
+    <div class="container-fluid">  
 
-    <!-- Button to trigger modal -->
-    <div class="container">
-      <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-      <!-- Modal -->
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">Modal header</h3>
+    <header>
+      <div class="container-fluid">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="index.html"><h1 id="buffetrlogo">Buffetr.com</h1>
+              <p id="buffpara">verb\ 'bu-fet, -r\<br /><strong>Definition:</strong> To eat large amounts of food while waiting for a web page<br /> to load due to your college's crappy Internet connection.</p></a>
+            <ul class="nav">
+              <li id="greeting"> 
+                <script type="text/javascript">
+                  // this code changes the greeting based on the time of day the user is visiting the page
+                  var dateToday = new Date(); //begins dateToday
+                  var timeNow = dateToday.getTime();
+                    dateToday.setTime(timeNow);
+                  var theHour = dateToday.getHours();
+                    if (theHour > 16.5) {
+                      display = "Good<br /> Evening!";
+                    } else if (theHour > 11) {
+                      display = "Good<br /> Afternoon!";
+                    } else {
+                      display = "Good<br /> Morning!";
+                    }; // EndBE2F33
+                  var greeting = (display);
+                    document.write(greeting);
+                </script>
+              </li>
+              <li class="offset1">
+                <form class="form-inline">
+                  <input type="text" class="input-small" id="userSignInEmail" name="userSignInEmail" placeholder="Email">
+                  <input type="password" class="input-small" id="userSignInPass" name="userSignInPass" placeholder="Password">
+                  <label class="checkbox">
+                    <input type="checkbox"> Remember me
+                  </label>
+                  <button type="submit" class="btn">Sign in</button>
+                </form>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="modal-body">
-          <div class="container">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Sign up! It is free!</h2>
-        <input type="text" class="input-block-level" placeholder="First name: ">
-        <input type="text" class="input-block-level" placeholder="Last name: ">
-        <input type="text" class="input-block-level" placeholder="Attending college or university: ">
-        <input type="text" class="input-block-level" placeholder="School email address: ">
-        <input type="text" class="input-block-level" placeholder="User name: ">
-        <input type="text" class="input-block-level" placeholder="Create a new password: ">
-        <input type="text" class="input-block-level" placeholder="Repeat new password: ">
-        <input type="text" class="input-block-level" data-date-format="mm/dd/yy" id="dp2" placeholder="Date of birth (mm/dd/yy): ">
-        <label class="checkbox">
-          <input type="checkbox" value="terms-of-service">By clicking on this checkbox, you agree to the <a href="#">terms and services</a> of Studentblab.com.
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Submit</button>
-      </form>
-    </div>
-        
+      </div>
+    </header>
 
-
-        </div>
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <button class="btn btn-primary">Save changes</button>
+    <div id="signUpForm">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span4">
+            <form class="form-signin" id="userSignUpForm" name="userSignUpForm">
+                  <h2 class="form-signin-heading">Sign up! It is free!</h2>
+                  <input type="text" class="input-block-level" id="firstName" name="firstName" placeholder="First name: ">
+                  <input type="text" class="input-block-level" id="lastName" name="lastName" placeholder="Last name: ">
+                  <input type="text" class="input-block-level" id="attendSchool" name="attendSchool" placeholder="Attending college or university: ">
+                  <input type="text" class="input-block-level" id="schoolEmail" name="schoolEmail" placeholder="School email address: ">
+                  <input type="text" class="input-block-level" id="userName" name="userName"placeholder="User name: ">
+                  <input type="text" class="input-block-level" id="userPassword" name="userPassword" placeholder="Create a new password: ">
+                  <input type="text" class="input-block-level" id="repeatPassword" name="repeatPassword" placeholder="Repeat new password: ">
+                  <input type="text" class="input-block-level" id="birthDate" name="birthDate" data-date-format="mm/dd/yy" id="dp2" placeholder="Date of birth (mm/dd/yy): ">
+                  <label class="checkbox">
+                    <input type="checkbox" value="terms-of-service">By clicking on this checkbox, you agree to the <a href="#">terms and services</a> of Buffetr.com.
+                  </label>
+                  <button class="btn btn-large btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="ui-widget span4 offset3">
+            <h4>Search your favorite schools to see what the students are really saying!</h4>
+            <label for="tags">Tags: </label>
+            <input id="tags">
+          </div>
         </div>
       </div>
     </div>
 
-    <!--<div class="container">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Sign up! It is free!</h2>
-        <input type="text" class="input-block-level" placeholder="First name: ">
-        <input type="text" class="input-block-level" placeholder="Last name: ">
-        <input type="text" class="input-block-level" placeholder="Attending college or university: ">
-        <input type="text" class="input-block-level" placeholder="School email address: ">
-        <input type="text" class="input-block-level" placeholder="User name: ">
-        <input type="text" class="input-block-level" placeholder="Create a new password: ">
-        <input type="text" class="input-block-level" placeholder="Repeat new password: ">
-        <input type="text" class="input-block-level" data-date-format="mm/dd/yy" id="dp2" placeholder="Date of birth (mm/dd/yy): ">
-        <label class="checkbox">
-          <input type="checkbox" value="terms-of-service">By clicking on this checkbox, you agree to the <a href="#">terms and services</a> of Studentblab.com.
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Submit</button>
-      </form>
-    </div>-->
-
- 
-
+    </div>  
   </body>
 
 </html>
