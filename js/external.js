@@ -79,21 +79,43 @@ $(document).ready(function() {
 
 
  // auto complete for searching schools
- $(function() {
-  var availableTags = [
-     "Belmont University",
-     "University of Dayton",
-     "Auburn University",
-     "Harvard University",
-     "Ohio State"
-  ];
-  $("#tags").autocomplete({
-    source: availableTags
+ if(jQuery.ui) {
+    console.log("pooper");
+    
+    var schoolMap = getSchoolMap();
+    var availableTags = Object.keys(schoolMap);
+//    [
+//       "Belmont University",
+//       "University of Dayton",
+//       "Auburn University",
+//       "Harvard University",
+//      "Ohio State"
+//    ];
+    $("#tags").autocomplete({
+      source: availableTags
+    });
+  }
+
+  $("#search-form").submit(function(e) {
+    e.preventDefault();
+    var searchId = $("#tags").val();
+    console.log(searchId);
+    var searchTarget = getSchoolMap()[searchId];
+    console.log(searchTarget);
+    if(searchTarget) {
+      window.location.href = searchTarget;
+    } else {
+      console.log("You should display an error message saying why it didn't go anywhere.");
+    }
   });
- }); // end of autocomplete function
-
-
-
 
 }); // end of document ready and JavaScript
 
+function getSchoolMap() {
+  var schoolMap = {};
+
+  schoolMap["Belmont University"] = "demoCommentPage.html";
+  schoolMap["University of Dayton"] = "demoCommentPage.html";
+
+  return schoolMap;
+}
