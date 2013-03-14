@@ -17,7 +17,7 @@ $(document).ready(function() {
   	  }); //end of POST ajax
       displayCommentToPage();
     });
-      //displayCommentToPage();
+    //displayCommentToPage();
 
 
 
@@ -46,6 +46,7 @@ $(document).ready(function() {
 		    console.log("Deleted!");
 	    }
   }); // end of ajax
+
 
 
   // date picker
@@ -84,13 +85,7 @@ $(document).ready(function() {
     
     var schoolMap = getSchoolMap();
     var availableTags = Object.keys(schoolMap);
-//    [
-//       "Belmont University",
-//       "University of Dayton",
-//       "Auburn University",
-//       "Harvard University",
-//      "Ohio State"
-//    ];
+
     $("#tags").autocomplete({
       source: availableTags
     });
@@ -109,13 +104,16 @@ $(document).ready(function() {
     }
   });
 
-}); // end of document ready and JavaScript
+  function getSchoolMap() {
+   var schoolMap = {};
 
-function getSchoolMap() {
-  var schoolMap = {};
-
-  schoolMap["Belmont University"] = "demoCommentPage.html";
-  schoolMap["University of Dayton"] = "demoCommentPage.html";
+   schoolMap["Belmont University"] = "demoCommentPage.html";
+   schoolMap["University of Dayton"] = "demoCommentPage.html";
 
   return schoolMap;
-}
+  }
+
+
+}); // end of document ready and JavaScript
+
+
