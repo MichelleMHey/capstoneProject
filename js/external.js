@@ -104,17 +104,8 @@ $(document).ready(function() {
     }
   });
 
-  function getSchoolMap() {
-   var schoolMap = {};
-
-   schoolMap["Belmont University"] = "demoCommentPage.html";
-   schoolMap["University of Dayton"] = "demoCommentPage.html";
-   schoolMap["Auburn University"] = "demoCommentPage.html";
-
-  return schoolMap;
-  }
-
-
+  
 }); // end of document ready and JavaScript
+
 
 
