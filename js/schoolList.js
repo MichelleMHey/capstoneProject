@@ -39,4 +39,4 @@ function loadSchoolDataByFirstLetter(firstLetter) {
 	output += "</p>";
 
 	$("#displaySchoolPicked").html(output);
-}
+};
