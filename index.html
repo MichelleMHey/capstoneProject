@@ -15,6 +15,7 @@
     <script src="vendors-js/bootstrap-datepicker.js"></script>
     <script src="vendors-js/jquery.autocomplete.js"></script>
     <script src="js/schools.js"></script>
+    <script src="js/validation.js"></script>
     <script src="js/external.js"></script>  
   </head>
 
@@ -84,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                       <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                      <button class="btn btn-primary">Submit</button>
+                      <button id="postUserSignInInfo" class="btn btn-primary" onclick="$('#userSignUpForm')[0].reset();">Submit</button>
                     </div>
                   </div>
                 </p>
