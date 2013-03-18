@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
   // Posts users comment to server
-	$("#postComment").click(function() {
+  $("#postComment").click(function() {
     $.ajax({
         type: "POST",
         url: "/backliftapp/userCommentBelow",
@@ -14,7 +14,7 @@ $(document).ready(function() {
         success: function (result) {
           console.log(result);
         }   
-  	  }); //end of POST ajax
+      }); //end of POST ajax
       displayCommentToPage();
     });
     //displayCommentToPage();
@@ -40,11 +40,11 @@ $(document).ready(function() {
 
   // ajax DELETE user comments
   $.ajax({
-	    type: "DELETE",
-	    url: "/backliftapp/userCommentBelow/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
-	    success: function(result) {
-		    console.log("Deleted!");
-	    }
+      type: "DELETE",
+      url: "/backliftapp/userCommentBelow/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
+      success: function(result) {
+        console.log("Deleted!");
+      }
   }); // end of ajax
 
 
@@ -81,7 +81,6 @@ $(document).ready(function() {
 
  // auto complete for searching schools
  if(jQuery.ui) {
-    console.log("pooper");
     
     var schoolMap = getSchoolMap();
     var availableTags = Object.keys(schoolMap);
@@ -106,6 +105,3 @@ $(document).ready(function() {
 
   
 }); // end of document ready and JavaScript
-
-
-
