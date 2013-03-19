@@ -68,24 +68,43 @@
                       <h3 id="myModalLabel">Learn and chat about your school!</h3>
                     </div>
                     <div class="modal-body">
-                      <form class="form-signin" id="userSignUpForm" name="userSignUpForm">
+                      <form action="" method="post" class="form-signin" id="register-form" novalidate="novalidate" name="userSignUpForm">
                         <h2 class="form-signin-heading">Sign up! It is free!</h2>
-                        <input type="text" class="input-block-level" id="firstName" name="firstName" placeholder="First name: ">
-                        <input type="text" class="input-block-level" id="lastName" name="lastName" placeholder="Last name: ">
-                        <input type="text" class="input-block-level" id="attendSchool" name="attendSchool" placeholder="Attending college or university: ">
-                        <input type="text" class="input-block-level" id="schoolEmail" name="schoolEmail" placeholder="School email address: ">
-                        <input type="text" class="input-block-level" id="userName" name="userName"placeholder="User name: ">
-                        <input type="text" class="input-block-level" id="userPassword" name="userPassword" placeholder="Create a new password: ">
-                        <input type="text" class="input-block-level" id="repeatPassword" name="repeatPassword" placeholder="Repeat new password: ">
-                        <input type="text" class="input-block-level" id="birthDate" name="birthDate" data-date-format="mm/dd/yy" id="dp2" placeholder="Date of birth (mm/dd/yy): ">
-                        <label class="checkbox">
-                          <input type="checkbox" value="terms-of-service">By clicking on this checkbox, you agree to the <a href="#">terms and services</a> of Buffetr.com.
-                        </label>
+                        <div id="form-content">
+                          <fieldset>
+                            <div class="fieldgroup">
+                              <input type="text" class="input-block-level" id="firstName" name="firstname" placeholder="First name: ">
+                            </div>
+                            <div class="fieldgroup">
+                              <input type="text" class="input-block-level" id="lastName" name="lastname" placeholder="Last name: ">
+                            </div>
+                            <div class="fieldgroup">
+                              <input type="text" class="input-block-level" id="attendSchool" name="attendSchool" placeholder="Attending college or university: ">
+                            </div>
+                            <div class="fieldgroup">
+                              <input type="text" class="input-block-level" id="schoolEmail" name="email" placeholder="School email address: ">
+                            </div>
+                            <div class="fieldgroup">
+                              <input type="text" class="input-block-level" id="userName" name="userName"placeholder="User name: ">
+                            </div>
+                            <div class="fieldgroup">
+                              <input type="password" class="input-block-level" id="userPassword" name="password" placeholder="Create a password: ">
+                            </div>
+                            <!--<input type="text" class="input-block-level" id="birthDate" name="birthDate" data-date-format="mm/dd/yy" id="dp2" placeholder="Date of birth (mm/dd/yy): ">-->
+                            <!--<label class="checkbox">
+                              <input type="checkbox" value="terms-of-service">By clicking on this checkbox, you agree to the <a href="#">terms and services</a> of Buffetr.com.
+                            </label>-->
+                            <div class="fieldgroup">
+                              <p>By clicking submit, you agree to our <a href="#">policy</a>.</p>
+                              <input type="submit" value="Submit" class="submit btn btn-primary" id="postUserSignInInfo" onclick="$('#userSignUpForm')[0].reset();">
+                            </div>
+                          </fieldset>
+                        </div>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                      <button id="postUserSignInInfo" class="btn btn-primary" onclick="$('#userSignUpForm')[0].reset();">Submit</button>
+                      <!--<button id="postUserSignInInfo" class="btn btn-primary" onclick="$('#userSignUpForm')[0].reset();">Submit</button>-->
                     </div>
                   </div>
                 </p>
@@ -120,7 +139,7 @@
           </div>
         </div>
       </div><!-- end .hero-unit -->
-    </div>
+     </div>
     </div>
 
 
