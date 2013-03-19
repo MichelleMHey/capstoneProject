@@ -1,5 +1,58 @@
+(function($,W,D)
+{
+    var JQUERY4U = {};
 
-$(document).ready(function() {
+    JQUERY4U.UTIL =
+    {
+        setupFormValidation: function()
+        {
+            //form validation rules
+            $("#register-form").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    firstname: "Please enter your firstname",
+                    lastname: "Please enter your lastname",
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 8 characters long"
+                    },
+                    email: "Please enter a valid SCHOOL email address",
+                    agree: "Please accept our policy"
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+        }
+    }
+
+    //when the dom has loaded setup form validation rules
+    $(D).ready(function($) {
+        JQUERY4U.UTIL.setupFormValidation();
+    });
+
+})(jQuery, window, document);
+
+
+
+
+
+
+
+
+/*$(document).ready(function() {
 
 $("#postUserSignInInfo").click(function() {
 	$.ajax({
@@ -21,66 +74,8 @@ $("#postUserSignInInfo").click(function() {
 	}); // end of ajax
 });
 
-$("#userSignUpForm").submit(function(e) {
-		e.preventDefault();
-	}).validate({
-		rules: {
-		firstName: {
-			minlength: 2,
-			maxlength: 30,
-			required: true
-		},
-		lastName: {
-			minlength: 2,
-			maxlength: 30,
-			required: true
-		},
-		attendSchool: {
-			minlength: 2, 
-			maxlength: 50,
-			required: true
-		},
-		schoolEmail: {
-			minlength: 2, 
-			maxlength: 40,
-			required: true
-		},
-		userName: {
-			minlength: 8,
-			maxlength: 24,
-			required: true
-		},
-		userPassword: {
-			minlength: 8, 
-			maxlength: 24,
-			required: true
-		},
-		repeatPassword: {
-			minlength: 8,
-			maxlength: 24,
-			required: true
-		},
-		birthDate: {
-			digits: true,
-			required: true, 
-			rangelength: [6,6]
-		},
-		subject: {
-			selectNone: true
-		},
 
-		},
-		highlight: function(label) {
-			$(label).closest('.control-group').addClass('error');
-		},
-		success: function(label){
-			label
-				.text('OK!').addClass('valid')
-				.closest('.control-group').addClass('success');
-		},
 
-	})
-
-});
+});*/
 
 
