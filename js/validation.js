@@ -46,36 +46,26 @@
 })(jQuery, window, document);
 
 
-
-
-
-
-
-
-/*$(document).ready(function() {
-
-$("#postUserSignInInfo").click(function() {
-	$.ajax({
-		url: "/backliftapp/userSignUp",
-		type: "POST",
-		dataType: "JSON",
-		data: {
-			firstName: $("#firstName").val(),
-			lastName: $("#lastName").val(),
-			attendSchool: $("#attendSchool").val(),
-			schoolEmail: $("#schoolEmail").val(),
-			userName: $("#userName").val(),
-			userPassword: $("#userPassword").val(),
-			repeatPassword: $("#repeatPassword").val(),
-			birthDate: $("#birthDate").val()
-		},
-		success: function(data){
-		}
-	}); // end of ajax
+$(document).ready(function() {
+  $("#postUserSignInInfo").click(function() {
+    $.ajax({
+	  type: "POST",
+	  url: "/backliftapp/signup",
+	  data: {
+	   	firstName: $("#firstName").val(),
+		lastName: $("#lastName").val(),
+		attendSchool: $("#attendSchool").val(),
+		schoolEmail: $("#schoolEmail").val(),
+		userName: $("#userName").val(),
+		password: $("#userPassword").val()
+	   },
+	  success: function(data) {
+		 console.log(data);
+	  }
+    });
+  });
 });
 
 
 
-});*/
-
-
+$("#register-form input").val("");
