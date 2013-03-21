@@ -7,7 +7,9 @@
         setupFormValidation: function()
         {
             //form validation rules
-            $("#register-form").validate({
+            $("#register-form").submit(function(event) {
+				event.preventDefault();
+			}).validate({
                 rules: {
                     firstname: "required",
                     lastname: "required",
@@ -31,9 +33,13 @@
                     email: "Please enter a valid SCHOOL email address",
                     agree: "Please accept our policy"
                 },
-                submitHandler: function(form) {
-                    form.submit();
-                }
+				submitHandler: function() { 
+					postUserInfo();
+					 $("#register-form")[0].reset();
+				},
+				success: function () {
+					console.log("Validation succeeded.");
+				}
             });
         }
     }
@@ -46,9 +52,8 @@
 })(jQuery, window, document);
 
 
-$(document).ready(function() {
-  $("#postUserSignInInfo").click(function() {
-    $.ajax({
+function postUserInfo() {
+	$.ajax({
 	  type: "POST",
 	  url: "/backliftapp/signup",
 	  data: {
@@ -63,9 +68,7 @@ $(document).ready(function() {
 		 console.log(data);
 	  }
     });
-  });
-});
-
+}
 
 
 $("#register-form input").val("");
