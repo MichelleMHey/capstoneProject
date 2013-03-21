@@ -39,13 +39,13 @@ $(document).ready(function() {
 
 
   // ajax DELETE user comments
-  $.ajax({
-      type: "DELETE",
-      url: "/backliftapp/userCommentBelow/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
-      success: function(result) {
-        console.log("Deleted!");
-      }
-  }); // end of ajax
+  //$.ajax({
+    //  type: "DELETE",
+      //url: "/backliftapp/userCommentBelow/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
+      //success: function(result) {
+       // console.log("Deleted!");
+     // }
+  //}); // end of ajax
 
 
 
@@ -55,41 +55,17 @@ $(document).ready(function() {
   });
 
 
-  // form validation
-  $(document).ready(function() {
-    $("#userSignUpForm").submit(function(e) {
-      e.preventDefault();
-    }).validate({
-      rules: {
-        firstName: {
-          minlength: 1,
-          maxlength: 30,
-          required: true
-        },
-        lastName: {
-          minlength: 1,
-          maxlength: 40,
-          required: true
-        },
-        attendSchool: {
-
-        }
-      }
-    })
-  }); // end of form validation function  
-
-
  // auto complete for searching schools
- if(jQuery.ui) {
+ if(jQuery.ui) { // if jquery ui is loaded, the user interface is loaded(autocomplete)
     
-    var schoolMap = getSchoolMap();
-    var availableTags = Object.keys(schoolMap);
+    var schoolMap = getSchoolMap(); // holds the return value of getSchoolMap() from schools.js
+    var availableTags = Object.keys(schoolMap); // Object.keys gets the info var schoolMap hods from schools.js 
 
     $("#tags").autocomplete({
       source: availableTags
     });
   }
-
+ 
   $("#search-form").submit(function(e) {
     e.preventDefault();
     var searchId = $("#tags").val();
