@@ -1,7 +1,9 @@
+
+// by using the function "getSchoolMap()" it creates an interface that does not change if we change the way we store the school data. 
 function getSchoolMap() {
    var schoolMap = {};
 
-   schoolMap["Belmont University"] = "../schoolPages/belmont.html";
+   schoolMap["Belmont University"] = "../schoolPages/belmont.html"; // for the object "schoolMap" it creates a variable named "Belmont University" and sets its value to the url
    schoolMap["University of Dayton"] = "../schoolPages/univDayton.html";
    schoolMap["Auburn University"] = "../schoolPages/auburnUniv.html";
    schoolMap["Colorado State University"] = "../schoolPages/coloradoStateUniv.html";
