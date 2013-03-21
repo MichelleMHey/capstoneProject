@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
-	var schoolStart = {};
+	var schoolStart = {}; //this is a "map" or "dictionary".
+	//It stores things as KEY => VALUE pairs.
+	//Kind of like String "Cory" could refer to a "Person" object with all of Cory's info in it.
 
-	for(var key = 65; key <= 90; key++){
+	for(var key = 65; key <= 90; key++){ //This goes through the alphabet from 'A' to 'Z'
 		schoolStart[String.fromCharCode(key)] = "<p>";
 	}
 
