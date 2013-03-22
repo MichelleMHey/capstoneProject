@@ -17,7 +17,6 @@ $(document).ready(function() {
       }); //end of POST ajax
       displayCommentToPage();
     });
-    //displayCommentToPage();
 
 
 
@@ -56,22 +55,29 @@ $(document).ready(function() {
 
 
  // auto complete for searching schools
- if(jQuery.ui) { // if jquery ui is loaded, the user interface is loaded(autocomplete)
-    
-    var schoolMap = getSchoolMap(); // holds the return value of getSchoolMap() from schools.js
-    var availableTags = Object.keys(schoolMap); // Object.keys gets the info var schoolMap hods from schools.js 
+ // using 'jQuery.ui' for the autocomplete, this will only let autocomplete load if jQuery ui is loaded.
+ if(jQuery.ui) { 
+
+    // holds the return value of 'getSchoolMap()' from JavaScript file 'school.js'
+    var schoolMap = getSchoolMap(); 
+
+    // 'Object.keys' gets list of all variable names on an object(everything in brackets in schools.js)
+    var availableTags = Object.keys(schoolMap); 
 
     $("#tags").autocomplete({
-      source: availableTags
+      source: availableTags // references the 'availableTags' variable
     });
   }
  
   $("#search-form").submit(function(e) {
-    e.preventDefault();
+    e.preventDefault(); // stops default submit action from executing before it goes through below code
+    
     var searchId = $("#tags").val();
     console.log(searchId);
-    var searchTarget = getSchoolMap()[searchId];
+   
+    var searchTarget = getSchoolMap()[searchId]; 
     console.log(searchTarget);
+    
     if(searchTarget) {
       window.location.href = searchTarget;
     } else {
