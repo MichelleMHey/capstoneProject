@@ -1,26 +1,27 @@
+// takes a list of schools and organizes them by letter to display on screen
+
 $(document).ready(function() {
 
-	var schoolStart = {}; //this is a "map" or "dictionary".
-	//It stores things as KEY => VALUE pairs.
-	//Kind of like String "Cory" could refer to a "Person" object with all of Cory's info in it.
+	var schoolStart = {}; 
 
-	for(var key = 65; key <= 90; key++){ //This goes through the alphabet from 'A' to 'Z'
-		schoolStart[String.fromCharCode(key)] = "<p>";
+	for(var key = 65; key <= 90; key++){ 
+		schoolStart[String.fromCharCode(key)] = "<p>"; 
 	}
 
-	var schoolMap = getSchoolMap();
+	var schoolMap = getSchoolMap();  
+	
 	var schoolList = Object.keys(schoolMap);
-	$.each(schoolList, function(i, val) {
+	$.each(schoolList, function(i, val) { 
 			schoolStart[val[0].toUpperCase()] += 
-				"<a href='" + schoolMap[val] + "'>" + val + "</a><br/>";
+				"<a href='" + schoolMap[val] + "'>" + val + "</a><br/>"; //
 	});
 
 	for(var key = 65; key <= 90; key++){
-		schoolStart[String.fromCharCode(key)] += "</p>";
+		schoolStart[String.fromCharCode(key)] += "</p>"; // caps off letter block
 
 
-		console.log(String.fromCharCode(key));
-		console.log(schoolStart[String.fromCharCode(key)]);
+		//console.log(String.fromCharCode(key));
+		//console.log(schoolStart[String.fromCharCode(key)]);
 
 		$("#displaySchoolPicked").html(
 			$("#displaySchoolPicked").html() +schoolStart[String.fromCharCode(key)]
@@ -30,7 +31,7 @@ $(document).ready(function() {
 
 function loadSchoolDataByFirstLetter(firstLetter) {
 
-	var output = "<p>";
+	var output = "<p>";  
 	var schoolMap = getSchoolMap();
 	var schoolList = Object.keys(schoolMap);
 	$.each(schoolList, function(i, val) {
