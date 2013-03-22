@@ -3,7 +3,7 @@
 function getSchoolMap() {
    var schoolMap = {};
 
-   schoolMap["Belmont University"] = "../schoolPages/belmont.html"; // for the object "schoolMap" it creates a variable named "Belmont University" and sets its value to the url
+   schoolMap["Belmont University"] = "../schoolPages/belmont.html"; 
    schoolMap["University of Dayton"] = "../schoolPages/univDayton.html";
    schoolMap["Auburn University"] = "../schoolPages/auburnUniv.html";
    schoolMap["Colorado State University"] = "../schoolPages/coloradoStateUniv.html";
