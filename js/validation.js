@@ -1,5 +1,4 @@
-(function($,W,D)
-{
+(function($,W,D)  {
     var JQUERY4U = {};
 
     JQUERY4U.UTIL =
@@ -8,7 +7,7 @@
         {
             //form validation rules
             $("#register-form").submit(function(event) {
-				event.preventDefault();
+				event.preventDefault(); 
 			}).validate({
                 rules: {
                     firstname: "required",
@@ -44,8 +43,8 @@
         }
     }
 
-    //when the dom has loaded setup form validation rules
-    $(D).ready(function($) {
+    // when the DOM has loaded setup form validation rules
+    $(document).ready(function($) {
         JQUERY4U.UTIL.setupFormValidation();
     });
 
@@ -69,6 +68,16 @@ function postUserInfo() {
 	  }
     });
 }
+
+
+  // ajax DELETE user comments
+  //$.ajax({
+    //  type: "DELETE",
+      //url: "/backliftapp/signup/5f490a37-ac89-4c61-9b81-51d54aec6225",
+      //success: function(result) {
+        //console.log("Deleted!");
+      //}
+  //}); // end of ajax
 
 
 $("#register-form input").val("");
