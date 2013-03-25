@@ -6,15 +6,15 @@ $(document).ready(function() {
   function displayCommentToPage() {
     $.ajax({
         type: "GET",
-        url: "/backliftapp/storeUserComment",
+        url: "/backliftapp/lkjflkdsafjsa",
         success: function(result) {
           var commentDisplay = "";
             for(var i = 0; i < result.length; i++) {
               commentDisplay += "<div> User: " + result[i]["userName"] + "<br /> " + result[i]["userComment"] + "<br /></div>"; 
 
             }
-          $("#displayUserComment").html(commentDisplay);
-            console.dir(result);
+            
+            $("#displayUserComment").html(commentDisplay);
             $('#commentBoxForm')[0].reset();
         }
       }); // end of GET ajax
@@ -23,11 +23,10 @@ $(document).ready(function() {
 
   // Posts users comment to server
   $("#postComment").click(function() {
-    //var user = new Array();
 
     $.ajax({
         type: "POST",
-        url: "/backliftapp/storeUserComment",
+        url: "/backliftapp/lkjflkdsafjsa",
         data: {
         userName: $("#userName").val(),
         userTags: $("#userTags").val(),
@@ -36,7 +35,6 @@ $(document).ready(function() {
         success: function (result) {
           console.log(result);
 
-          //user.push(result);
            displayCommentToPage();
         }   
          
