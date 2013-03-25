@@ -22,7 +22,15 @@ Phase Two (completed):
 -I added an autocomplete search bar where users can search the school of their choice and be redirected to that schools home page. 
 -I added a user sign up form.
 
-Phase Three:
+Phase Three (completed):
 
-coming soon...
+-Got my demo comment box to display user posts from newest to oldest.
+-Demo comment box refreshes and does not loose the previously submitted comments. 
+-Added form validation to the sign up form.
+-Used ajax to POST the user input from the submitted form.
+-Added more CSS.
+-Created an alphabetical school list, that first displays all the schools, but when a letter is picked, schools starting with that specific letter will only be displayed. 
 
+Phase Four (will be completed by Wednesday):
+
+-Clean up CSS to make the website look attractive. 
