@@ -6,14 +6,16 @@ $(document).ready(function() {
   function displayCommentToPage() {
     $.ajax({
         type: "GET",
-        url: "/backliftapp/commentssssss",
+        url: "/backliftapp/storeUserComment",
         success: function(result) {
           var commentDisplay = "";
             for(var i = 0; i < result.length; i++) {
               commentDisplay += "<div> User: " + result[i]["userName"] + "<br /> " + result[i]["userComment"] + "<br /></div>"; 
+
             }
           $("#displayUserComment").html(commentDisplay);
             console.dir(result);
+            $('#commentBoxForm')[0].reset();
         }
       }); // end of GET ajax
   }; // end of displayCommentToPage function
@@ -21,9 +23,11 @@ $(document).ready(function() {
 
   // Posts users comment to server
   $("#postComment").click(function() {
+    //var user = new Array();
+
     $.ajax({
         type: "POST",
-        url: "/backliftapp/commentssssss",
+        url: "/backliftapp/storeUserComment",
         data: {
         userName: $("#userName").val(),
         userTags: $("#userTags").val(),
@@ -31,19 +35,23 @@ $(document).ready(function() {
         },
         success: function (result) {
           console.log(result);
+
+          //user.push(result);
+           displayCommentToPage();
         }   
+         
       }); //end of POST ajax
-      displayCommentToPage();
+      //displayCommentToPage();
     });
 
-
+    
 
  
 
   // ajax DELETE user comments
   //$.ajax({
     //  type: "DELETE",
-      //url: "/backliftapp/commentssssss/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
+      //url: "/backliftapp/storeUserComment/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
       //success: function(result) {
        // console.log("Deleted!");
      // }
