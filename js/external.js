@@ -1,11 +1,29 @@
 $(document).ready(function() {
 
+  displayCommentToPage();
+
+   // Gets users comment from the server and displays it to webpage
+  function displayCommentToPage() {
+    $.ajax({
+        type: "GET",
+        url: "/backliftapp/commentssssss",
+        success: function(result) {
+          var commentDisplay = "";
+            for(var i = 0; i < result.length; i++) {
+              commentDisplay += "<div> User: " + result[i]["userName"] + "<br /> " + result[i]["userComment"] + "<br /></div>"; 
+            }
+          $("#displayUserComment").html(commentDisplay);
+            console.dir(result);
+        }
+      }); // end of GET ajax
+  }; // end of displayCommentToPage function
+
 
   // Posts users comment to server
   $("#postComment").click(function() {
     $.ajax({
         type: "POST",
-        url: "/backliftapp/userCommentBelow",
+        url: "/backliftapp/commentssssss",
         data: {
         userName: $("#userName").val(),
         userTags: $("#userTags").val(),
@@ -20,27 +38,12 @@ $(document).ready(function() {
 
 
 
-  // Gets users comment from the server and displays it to webpage
-  function displayCommentToPage() {
-    $.ajax({
-        type: "GET",
-        url: "/backliftapp/userCommentBelow",
-        success: function(result) {
-          var commentDisplay = "";
-            for(var i = 0; i < result.length; i++) {
-              commentDisplay += "<div> User: " + result[i]["userName"] + "<br /> " + result[i]["userComment"] + "<br /></div>"; 
-            }
-          $("#displayUserComment").html(commentDisplay);
-            console.dir(result);
-        }
-      }); // end of GET ajax
-  }; // end of displayCommentToPage function
-
+ 
 
   // ajax DELETE user comments
   //$.ajax({
     //  type: "DELETE",
-      //url: "/backliftapp/userCommentBelow/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
+      //url: "/backliftapp/commentssssss/82e9101d-8cbf-4b69-b61f-693d7e1c0f75",
       //success: function(result) {
        // console.log("Deleted!");
      // }
