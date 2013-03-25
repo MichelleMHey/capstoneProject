@@ -1,23 +1,15 @@
+#userName {
+	width: 500px;
+}
 
+#userTags {
+	width: 500px;
+}
 
-/*body {
-	background: url("../img/schoolwithtext.png") 77% 0 fixed no-repeat !important;
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: 500px;
-	padding-bottom: 350px;
-	z-index: 100;
-	background-size: 100px;
-}*/
+#userComment {
+	width: 500px;
+}
 
-
-/*body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	font-weight: normal;
-	line-height: 18px;
-	color: #404040;
-}*/
-
-
-
+#displayUserComment {
+	width: 500px;
+}
