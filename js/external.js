@@ -4,18 +4,21 @@ $(document).ready(function() {
 
    // Gets users comment from the server and displays it to webpage
   function displayCommentToPage() {
+    $("#displayUserComment").html("");
     $.ajax({
         type: "GET",
         url: "/backliftapp/theusercomment",
         success: function(result) {
           //var commentDisplay = "";
-            for(var i = 0; i < result.length; i++) {
-               $("#displayUserComment").prepend("<div> User: " + result[i]["userName"] + "<br /> " + result[i]["userComment"] + "<br /></div>"); 
+            result.reverse();
+            $.each(result, function(){/*for(var i = 0; i < result.length; i++)*/ {
+               $("#displayUserComment").append("<div> User: " + this.userName + "<br /> " + this.userComment + "<br /></div>"); 
             };
             
-            //$("#displayUserComment").prepend(commentDisplay);
             $('#commentBoxForm')[0].reset();
+          });
         }
+
       }); // end of GET ajax
   }; // end of displayCommentToPage function
 
