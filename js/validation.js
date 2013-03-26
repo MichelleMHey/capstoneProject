@@ -54,7 +54,7 @@
 function postUserInfo() {
 	$.ajax({
 	  type: "POST",
-	  url: "/backliftapp/signup",
+	  url: "/backliftapp/usersignup",
 	  data: {
 	   	firstName: $("#firstName").val(),
 		lastName: $("#lastName").val(),
@@ -73,7 +73,7 @@ function postUserInfo() {
   // ajax DELETE user comments
   //$.ajax({
     //  type: "DELETE",
-      //url: "/backliftapp/signup/5f490a37-ac89-4c61-9b81-51d54aec6225",
+      //url: "/backliftapp/usersignup/",
       //success: function(result) {
         //console.log("Deleted!");
       //}
