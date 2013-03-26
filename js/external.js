@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("#displayUserComment").html("");
     $.ajax({
         type: "GET",
-        url: "/backliftapp/theusercomment",
+        url: "/backliftapp/userscomments",
         success: function(result) {
           //var commentDisplay = "";
             result.reverse();
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: "POST",
-        url: "/backliftapp/theusercomment",
+        url: "/backliftapp/userscomments",
         data: {
         userName: $("#userName").val(),
         userTags: $("#userTags").val(),
@@ -47,7 +47,7 @@ $(document).ready(function() {
   // ajax DELETE user comments
   //$.ajax({
     //  type: "DELETE",
-      //url: "/backliftapp/theusercomment/",
+      //url: "/backliftapp/userscomments/",
       //success: function(result) {
        // console.log("Deleted!");
      // }
